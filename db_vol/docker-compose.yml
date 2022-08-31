@@ -1,0 +1,18 @@
+version: '3'
+services:
+    mysql_db:
+        image: mysql
+        container_name: mysql_db
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: django_db
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: password
+        ports:
+            - '3306:3306'
+        # networks:
+        #     - test-network
+        volumes:
+            - ~/home/alex/projects/portfolio-project/db_vol:/var/lib/mysql
+            # - mysql_db_vol: /var/lib/mysql
+
